@@ -26,9 +26,32 @@
  * There are multiple ways to do this, but you may want to use regular expressions.
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
+
+var array = [{ name1: "value1" }, { name2: "value2" }],
+  object = Object.assign({}, ...array);
+
+console.log(object);
+
+Object.assign({}, ["a", "b", "c"]); // {0:"a", 1:"b", 2:"c"}
+
 function parseStory(rawStory) {
   // Your code here.
-  return {}; // This line is currently wrong :)
+  const spl = (string) => {
+    const bla = string.split(" ");
+    return bla;
+  };
+  const arr = spl(rawStory);
+  const check = arr.map((word) => {
+    if (word.match(/\[v\]/)) {
+      console.log(word);
+    } else if (/\[n\]/.test(word)) {
+      console.log(word);
+    } else if (/\[a\]/.test(word)) {
+      console.log(word);
+    }
+  });
+  return arr;
+  // This line is currently wrong :)
 }
 
 /**
@@ -40,6 +63,6 @@ function parseStory(rawStory) {
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
+    document.getElementById("demo").innerHTML = processedStory;
     console.log(processedStory);
   });
-// I need to clear it
