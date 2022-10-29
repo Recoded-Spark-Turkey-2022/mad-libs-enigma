@@ -62,14 +62,14 @@ function forInput(object) {
     //const object = object[i]
     const span = (document.getElementById(
       "demo"
-    ).innerHTML += `<span class=“spanclass” id=" ${object[i].word}">${object[i].word}</span>`);
+    ).innerHTML += `<span class=“spanclass” id="${object[i].word}">${object[i].word}</span>`);
 
     //span.appendChild()
 
     if ("pos" in object[i]) {
       const input = (document.getElementById(
-        "demo"
-      ).innerHTML += `<input class=“inputclass” id=" ${object[i].word}">${object[i].word}</input>`);
+        `${object[i].word}`
+      ).innerHTML += `<input class=“inputclass” id="${object[i].word}">${object[i].word}</input>`);
       input.id = `${i}`;
 
       /*const input = document.createElement("input");
