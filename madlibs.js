@@ -27,13 +27,13 @@
 //  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
 //  */
 
+let arrayOfObjects = [];
 function parseStory(rawStory) {
   // Your code here.
   const spl = (string) => {
     const splitedStory = string.split(" ");
     return splitedStory;
   };
-  let arrayOfObjects = [];
   const arr = spl(rawStory);
   const check = arr.map((word) => {
     if (/\[v\]/.test(word)) {
@@ -58,25 +58,39 @@ function parseStory(rawStory) {
 }
 
 function forInput(object) {
+  arrId = [];
   for (let i = 0; i < object.length; i++) {
-    //const object = object[i]
     const span = (document.getElementById(
       "demo"
-    ).innerHTML += `<span class=“spanclass” id="${object[i].word}">${object[i].word}</span>`);
-
-    //span.appendChild()
+    ).innerHTML += `<span class=“spanclass” id="${object[i].word}"></span>`);
 
     if ("pos" in object[i]) {
       const input = (document.getElementById(
         `${object[i].word}`
-      ).innerHTML += `<input class=“inputclass” id="${object[i].word}">${object[i].word}</input>`);
-      input.id = `${i}`;
-
-      /*const input = document.createElement("input");
-      input.setAttribute("placeholder", `${object[i].pos}`);
-      input.id=`${i}`*/
+      ).innerHTML += `<input class=“inputclass” id="${i}" placeholder="${object[i].pos}"></input>`);
+      arrId.push(i);
+    } else if ("pos" in object[i] === false) {
+      const x = (document.getElementById(
+        `${object[i].word}`
+      ).innerHTML += `${object[i].word} `);
     }
   }
+  for (let i = 0; i < arrId.length; i++) {
+    const element = document.getElementById(`${arrId[i]}`);
+    element.addEventListener("input", myFunction);
+  }
+
+  function myFunction(e) {
+    //e.target gives id
+    console.log(e);
+
+    //güncelleme
+
+    //obj to text method
+  }
+
+  console.log(arrId);
+  return arrId;
 }
 
 // /**
@@ -88,6 +102,5 @@ function forInput(object) {
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
-    //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
     console.log(processedStory);
   });
