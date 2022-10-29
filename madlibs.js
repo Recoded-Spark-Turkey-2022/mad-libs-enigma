@@ -73,16 +73,7 @@ function parseStory(rawStory) {
         const input = (document.getElementById("demo").innerHTML += `<input class=“inputclass” id=" ${object[i].word}">${object[i].word}</input>`);
         input.id=`${i}`
         
-    
-        
-
-        
-
-
-
-
-
-
+  
 
        /*const input = document.createElement("input");
         input.setAttribute("placeholder", `${object[i].pos}`);
