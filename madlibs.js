@@ -50,9 +50,33 @@ function parseStory(rawStory) {
     }
   });
   const x = JSON.stringify(arrayOfObjects);
+  forInput(arrayOfObjects);
   console.log(arrayOfObjects);
   return x;
+
   // This line is currently wrong :)
+}
+
+function forInput(object) {
+  for (let i = 0; i < object.length; i++) {
+    //const object = object[i]
+    const span = (document.getElementById(
+      "demo"
+    ).innerHTML += `<span class=“spanclass” id=" ${object[i].word}">${object[i].word}</span>`);
+
+    //span.appendChild()
+
+    if ("pos" in object[i]) {
+      const input = (document.getElementById(
+        "demo"
+      ).innerHTML += `<input class=“inputclass” id=" ${object[i].word}">${object[i].word}</input>`);
+      input.id = `${i}`;
+
+      /*const input = document.createElement("input");
+      input.setAttribute("placeholder", `${object[i].pos}`);
+      input.id=`${i}`*/
+    }
+  }
 }
 
 // /**
@@ -64,6 +88,6 @@ function parseStory(rawStory) {
 getRawStory()
   .then(parseStory)
   .then((processedStory) => {
-    document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
+    //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
     console.log(processedStory);
   });
