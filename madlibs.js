@@ -82,7 +82,7 @@ function parseStory(rawStory) {
 
 
 
-      }
+      }gi
 
     }
 
