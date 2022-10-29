@@ -87,6 +87,8 @@ function forInput(array) {
 
     document.querySelectorAll(`.madLibsEdit input`).forEach((input, index) => {
       input.addEventListener("input", (e) => {
+        console.log(index);
+        console.log(input);
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
       });
