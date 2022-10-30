@@ -75,11 +75,12 @@ function parseStory(rawStory) {
       madLibsPreview.id='preview'
   
 function createInputStory(place, pholder){
-     place.innerHTML +=`<span> <input type='text' name='type' id='input' value='' placeholder=${pholder} maxlength="20"> </span>`
-      }
+     place.innerHTML +=`<span> <input type='text' name='type' id='input' value='' placeholder=${pholder} maxlength="20"> </span>`}
+     
       function createOutputStory(place){
         place.innerHTML +=`<span> <input type='text' name='type' id='output' value=''  readonly> </span>`
       }
+      
     array.forEach(object => {
       if(object.pos){
       createInputStory(madLibsEdit,  object.pos);
@@ -96,8 +97,10 @@ function createInputStory(place, pholder){
     })
   }
  
-function setupSound() 
-{ 
+ 
+
+
+function setupSound() { 
   var obj = document.createElement("object"); 
   obj.width="0px"; 
   obj.height="0px"; 
@@ -133,7 +136,3 @@ getRawStory()
     setupSound()
     console.log("anything");
   }
-
-        
-      
-

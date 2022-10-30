@@ -7,14 +7,17 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 15%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
    
 }
 #input{
-    border-color: beige;
-    border-width:0.4px ;
-    
+    border: none;
+    /*border-width:0.4px ;*/
     border-radius: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(79, 79, 154, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: rgb(244, 205, 244);
+    background: linear-gradient(135deg, rgb(222, 176, 237) 9%, rgba(99,164,255,1) 99%);
 }
 
  #output {
