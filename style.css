@@ -1,3 +1,37 @@
 /**
  * Your CSS goes here.
  */
+body{
+    height:  100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15%;
+   
+}
+#input{
+    border-color: beige;
+    
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+ #output {
+border: none;
+background-color: transparent;
+resize:none;
+outline: none;
+
+
+ }
+
+
+ #preview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5%;
+
+ }
+
+ 

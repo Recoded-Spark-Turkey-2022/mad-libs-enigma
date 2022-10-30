@@ -60,30 +60,25 @@ function parseStory(rawStory) {
     }
     return arrayOfObjects;
   });
- 
 
-        //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
-    
-  
-    
-        const x = JSON.stringify(arrayOfObjects);
-        console.log(arrayOfObjects);
-        forInput(arrayOfObjects)
-        return x;
+    const x = JSON.stringify(arrayOfObjects);
+    console.log(arrayOfObjects);
+    forInput(arrayOfObjects)
+    return x;
 }
-      
- 
     //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
     
      function forInput(array){
       const madLibsEdit = document.querySelector('.madLibsEdit')
+      madLibsEdit.id='edit'
       const madLibsPreview = document.querySelector('.madLibsPreview')
+      madLibsPreview.id='preview'
   
 function createInputStory(place, pholder){
-     place.innerHTML +=`<span> <input type='text' name='type' value='' placeholder=${pholder}> </span>`
+     place.innerHTML +=`<span> <input type='text' name='type' id='input' value='' placeholder=${pholder} maxlength="20"> </span>`
       }
-      function createOutputStory(place, pholder){
-        place.innerHTML +=`<span> <input type='text' name='type' value='' placeholder=${pholder} readonly> </span>`
+      function createOutputStory(place){
+        place.innerHTML +=`<span> <input type='text' name='type' id='output' value=''  readonly> </span>`
       }
     array.forEach(object => {
       if(object.pos){
@@ -101,7 +96,6 @@ function createInputStory(place, pholder){
     })
   }
  
-  
 function setupSound() 
 { 
   var obj = document.createElement("object"); 
@@ -137,7 +131,7 @@ getRawStory()
   {
     //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
     setupSound()
-    console.log("any thing");
+    console.log("anything");
   }
 
         
