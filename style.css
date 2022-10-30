@@ -1,3 +1,145 @@
 /**
  * Your CSS goes here.
  */
+ @media only screen and (min-width: 450px){
+ *{
+    margin: 0;
+    padding: 0%;
+ }
+ html{
+    height: 100%;
+ }
+ 
+ body{
+    display: absolute;
+    position: relative;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #2C3E50 0%, #7F8C8D 74%);
+     display: flex;
+    align-items: center;
+
+ }
+#edit {
+    position: absolute;
+    background-color: rgba(255,255,255,0.6);
+    padding: 50 px 0;
+    border-radius:5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 40vw;
+    min-height: 30vh;
+    max-height: 70vh;
+    margin: 0 ;
+    right:30px;
+    top:800%;
+   justify-content:space-between;
+   
+
+ }
+ #Preview {
+   
+    position: absolute;
+    background-color: rgba(255,255,255,0.6);
+    padding: 50 px 0;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    max-width: 40vw;
+    min-height: 30vh;
+    max-height: 70vh;
+    margin: 0;
+    right:30px;
+    left:30px;
+    top: 800%;
+  
+    
+ }
+ 
+
+ 
+nav{
+    display: flex;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+nav  a{
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    margin: 0 30px;
+
+}
+
+nav button{
+    position: absolute;
+    background:#efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.5s;
+    left: 100px;
+}
+nav button span{
+    display: flex;
+    background: rgb(96, 96, 96);
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    margin-left:  0.25px;
+}
+.lamp-container{
+   position:absolute;
+   top:-100px;
+   left: 15%;
+   width: 200px; 
+}
+.lamp{
+    width:100%;
+}
+.light{
+    position: absolute;
+    top:97%;
+    left:50%;
+    transform: translateX(-50%);
+    width:700px;
+    margin-left: -10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.active{
+    background: green;
+}
+.active span{
+    background: white;
+    margin-left: 31px;
+}
+.on{
+    opacity: 1;
+}
+
+
+}
+
+#input[type=text]:focus {
+    background-color: lightblue;
+  }
+#output{
+    border: none;
+    background-color: transparent;
+    resize:none;
+    outline: none;
+    max-width: 40px;
+    color: rgb(74, 57, 158);
+    font-weight: bold;
+}
+.create{
+    position: fixed;
+    padding: 50 px 0;
+    margin: 0 ;
+    right:110px;
+    top:500px;
+    
+}

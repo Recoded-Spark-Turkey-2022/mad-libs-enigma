@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  * Complete the implementation of parseStory.
  * 
@@ -38,38 +37,6 @@
    * You'll want to use the results of parseStory() to display the story on the page.
    */
     
-=======
-// /**
-//  * Complete the implementation of parseStory.
-//  *
-//  * parseStory retrieves the story as a single string from story.txt
-//  * (I have written this part for you).
-//  *
-//  * In your code, you are required (please read this carefully):
-//  * - to return a list of objects
-//  * - each object should definitely have a field, `word`
-//  * - each object should maybe have a field, `pos` (part of speech)
-//  *
-//  * So for example, the return value of this for the example story.txt
-//  * will be an object that looks like so (note the comma! periods should
-//  * be handled in the same way).
-//  *
-//  * Input: "Louis[n] went[v] to the store[n], and it was fun[a]."
-//  * Output: [
-//  *  { word: "Louis", pos: "noun" },
-//  *  { word: "went", pos: "verb", },
-//  *  { word: "to", },
-//  *  { word: "the", },
-//  *  { word: "store", pos: "noun" }
-//  *  { word: "," }
-//  *  ....
-//  *
-//  * There are multiple ways to do this, but you may want to use regular expressions.
-//  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
-//  */
-
-  
->>>>>>> f99330fbe703f51a471d80139f7eff6e04d49c75
 function parseStory(rawStory) {
   // Your code here.
   const spl = (string) => {
@@ -91,7 +58,6 @@ function parseStory(rawStory) {
     } else {
       arrayOfObjects.push({ word: word });
     }
-<<<<<<< HEAD
     return arrayOfObjects;
   });
  
@@ -111,13 +77,15 @@ function parseStory(rawStory) {
     
      function forInput(array){
       const madLibsEdit = document.querySelector('.madLibsEdit')
+      madLibsEdit.id="edit"
       const madLibsPreview = document.querySelector('.madLibsPreview')
+      madLibsPreview .id="Preview"
   
 function createInputStory(place, pholder){
-     place.innerHTML +=`<span> <input type='text' name='type' value='' placeholder=${pholder}> </span>`
+     place.innerHTML +=`<span> <input type='text' id='input' name='type' value='' placeholder=${pholder}> </span>`
       }
-      function createOutputStory(place, pholder){
-        place.innerHTML +=`<span> <input type='text' name='type' value='' placeholder=${pholder} readonly> </span>`
+      function createOutputStory(place){
+        place.innerHTML +=`<span> <input type='text' name='type' id='output' value='' readonly> </span>`
       }
     array.forEach(object => {
       if(object.pos){
@@ -174,76 +142,11 @@ getRawStory()
     console.log("any thing");
   }
 
-        
+  function toggleBtn() {
+    const light = document.getElementById("light");
+    const element = document.getElementById("btn");
+    element.classList.toggle("active");
+    light.classList.toggle("on");
+  }     
       
 
-=======
-  });
-    const x = JSON.stringify(arrayOfObjects);
-  console.log(arrayOfObjects);
-  forInput(arrayOfObjects)
-  return x;
-
-}
-  
-  
-  
-  function forInput(object) {
-    
-    for(let i=0; i<object.length; i++){
-      //const object = object[i]
-      const span = (document.getElementById(
-        "demo").innerHTML += `<span class=“spanclass” id=" ${object[i].word}">${object[i].word}</span>`);
-  
-      //span.appendChild() 
-
-
-      if('pos'in object[i]){
-        const input = (document.getElementById("demo").innerHTML += `<input class=“inputclass” id=" ${object[i].word}">${object[i].word}</input>`);
-        input.id=`${i}`
-        
-  
-
-       /*const input = document.createElement("input");
-        input.setAttribute("placeholder", `${object[i].pos}`);
-        input.id=`${i}`*/
-       
-
-
-
-      }
-
-    }
-
-  }
-  
-  
-  
- 
-
-  
-  
-  
-
- 
-  
-  // This line is currently wrong :)
-  
-
-
-// /**
-//  * All your other JavaScript code goes here, inside the function. Don't worry about
-//  * the `then` and `async` syntax for now.
-//  *
-//  * You'll want to use the results of parseStory() to display the story on the page.
-//  */
-
-getRawStory()
-  .then(parseStory)
-  .then((processedStory) => {
-    //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
-    
-    console.log(processedStory);
-  });
-  
->>>>>>> f99330fbe703f51a471d80139f7eff6e04d49c75
