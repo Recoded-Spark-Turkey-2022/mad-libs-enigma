@@ -43,7 +43,7 @@ function parseStory(rawStory) {
     const splitedStory = string.split(" ");
     return splitedStory;
   };
-  const arrayOfObjects = [];
+  let arrayOfObjects = [];
   const arr = spl(rawStory);
   const check = arr.map((word) => {
     if (/\[v\]/.test(word)) {
@@ -61,7 +61,6 @@ function parseStory(rawStory) {
     return arrayOfObjects;
   });
   const x = JSON.stringify(arrayOfObjects);
-  forInput(arrayOfObjects);
   console.log(arrayOfObjects);
   forInput(arrayOfObjects);
   return x;
