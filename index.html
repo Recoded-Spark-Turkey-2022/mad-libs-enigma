@@ -2,23 +2,41 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>repl.it</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <div class='madLibsEdit'>
-  </div>
-  <div class='madLibsPreview'>
-  </div>
 
-  <button ondblclick="Create()"> Create </button>
+  <div class="container">
+    <div class="madLibsEdit">
+      <p class="madLibsEditP">
 
+      </p>
+    </div>
 
-  <script src="do-not-touch.js"></script>
-  <script src="madlibs.js"></script>
+    <div class="madLibsPreview">
+      <p class="madLibsPreviewP">
+
+      </p>
+    </div>
+    <div class="hero">
+      <nav>
+        <a href=" ">Light On</a>
+        <button type="button" onclick="toggleBtn()" id="btn">
+          <span></span>
+        </button>
+      </nav>
+      <div class="lamp-container">
+        <img src="lamp.png" class="lamp" />
+        <img src="light.png" class="light" id="light" />
+      </div>
+    </div>
+    <button class="create" onclick="Create()">Create</button>
+    <script src="do-not-touch.js"></script>
+    <script src="madlibs.js"></script>
 </body>
 
 </html>
