@@ -29,9 +29,9 @@ function parseStory(rawStory) {
 
 const inputId = [];
 function forInput(array) {
-  const madLibsEdit = document.querySelector(".madLibsEdit");
+  const madLibsEdit = document.querySelector(".madLibsEditP");
   madLibsEdit.id = "edit";
-  const madLibsPreview = document.querySelector(".madLibsPreview");
+  const madLibsPreview = document.querySelector(".madLibsPreviewP");
   madLibsPreview.id = "Preview";
 
   function createInputStory(place, pholder, index) {
@@ -52,8 +52,6 @@ function forInput(array) {
 
     document.querySelectorAll(`.madLibsEdit input`).forEach((input, index) => {
       input.addEventListener("input", (e) => {
-        console.log(index);
-        console.log(input);
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
       });
@@ -95,12 +93,22 @@ function Create() {
 getRawStory().then(parseStory);
 {
   setupSound();
-  console.log("any thing");
 }
 
 function toggleBtn() {
   const light = document.getElementById("light");
   const element = document.getElementById("btn");
+
   element.classList.toggle("active");
   light.classList.toggle("on");
+  myFunction();
+}
+
+function myFunction() {
+  let x = document.getElementById("Preview");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
