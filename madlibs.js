@@ -175,47 +175,10 @@ getRawStory()
   }
 
         
-      
-
-=======
-  });
-    const x = JSON.stringify(arrayOfObjects);
-  console.log(arrayOfObjects);
-  forInput(arrayOfObjects)
-  return x;
-
-}
-  
-  
-  
-  function forInput(object) {
     
-    for(let i=0; i<object.length; i++){
-      //const object = object[i]
-      const span = (document.getElementById(
-        "demo").innerHTML += `<span class=“spanclass” id=" ${object[i].word}">${object[i].word}</span>`);
   
-      //span.appendChild() 
-
-
-      if('pos'in object[i]){
-        const input = (document.getElementById("demo").innerHTML += `<input class=“inputclass” id=" ${object[i].word}">${object[i].word}</input>`);
-        input.id=`${i}`
-        
   
-
-       /*const input = document.createElement("input");
-        input.setAttribute("placeholder", `${object[i].pos}`);
-        input.id=`${i}`*/
-       
-
-
-
-      }
-
-    }
-
-  }
+ 
   
   
   
@@ -226,24 +189,4 @@ getRawStory()
   
 
  
-  
-  // This line is currently wrong :)
-  
 
-
-// /**
-//  * All your other JavaScript code goes here, inside the function. Don't worry about
-//  * the `then` and `async` syntax for now.
-//  *
-//  * You'll want to use the results of parseStory() to display the story on the page.
-//  */
-
-getRawStory()
-  .then(parseStory)
-  .then((processedStory) => {
-    //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
-    
-    console.log(processedStory);
-  });
-  
->>>>>>> f99330fbe703f51a471d80139f7eff6e04d49c75
