@@ -61,7 +61,7 @@ function parseStory(rawStory) {
     return arrayOfObjects;
   });
   const x = JSON.stringify(arrayOfObjects);
-  console.log(arrayOfObjects);
+  //console.log(arrayOfObjects);
   forInput(arrayOfObjects);
   return x;
 }
@@ -90,14 +90,12 @@ function forInput(array) {
     document.querySelectorAll(`.madLibsEdit input`).forEach((input, index) => {
       input.addEventListener("input", (e) => {
         console.log(index);
-        console.log(input);
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
       });
 
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-          console.log(index);
           document.getElementById(`${inputId[index + 1]}`).focus();
         }
       });
@@ -132,5 +130,5 @@ function Create() {
 getRawStory().then(parseStory);
 {
   setupSound();
-  console.log("any thing");
+  //console.log("any thing");
 }
