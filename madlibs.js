@@ -66,19 +66,21 @@ function parseStory(rawStory) {
   return x;
 }
 
+const inputId = [];
 function forInput(array) {
   const madLibsEdit = document.querySelector(".madLibsEdit");
   const madLibsPreview = document.querySelector(".madLibsPreview");
 
-  function createInputStory(place, pholder) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' placeholder=${pholder}> </span>`;
+  function createInputStory(place, pholder, index) {
+    place.innerHTML += `<span> <input type='text' name='type' value='' id='${index}' placeholder=${pholder}> </span>`;
   }
   function createOutputStory(place, pholder) {
     place.innerHTML += `<span> <input type='text' name='type' value='' placeholder=${pholder} readonly> </span>`;
   }
-  array.forEach((object) => {
+  array.forEach((object, index) => {
     if (object.pos) {
-      createInputStory(madLibsEdit, object.pos);
+      inputId.push(index);
+      createInputStory(madLibsEdit, object.pos, index);
       createOutputStory(madLibsPreview, object.pos);
     } else {
       madLibsEdit.innerHTML += `${object.word} `;
@@ -91,6 +93,13 @@ function forInput(array) {
         console.log(input);
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          console.log(index);
+          document.getElementById(`${inputId[index + 1]}`).focus();
+        }
       });
     });
   });
