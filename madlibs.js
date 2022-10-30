@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * Complete the implementation of parseStory.
  *
@@ -27,16 +28,47 @@
  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
  */
 
-// Your code here.
+  // Your code here.
+  
+  // This is examplePull
+  /**
+   * All your other JavaScript code goes here, inside the function. Don't worry about
+   * the `then` and `async` syntax for now.
+   * 
+   * You'll want to use the results of parseStory() to display the story on the page.
+   */
+    
+=======
+// /**
+//  * Complete the implementation of parseStory.
+//  *
+//  * parseStory retrieves the story as a single string from story.txt
+//  * (I have written this part for you).
+//  *
+//  * In your code, you are required (please read this carefully):
+//  * - to return a list of objects
+//  * - each object should definitely have a field, `word`
+//  * - each object should maybe have a field, `pos` (part of speech)
+//  *
+//  * So for example, the return value of this for the example story.txt
+//  * will be an object that looks like so (note the comma! periods should
+//  * be handled in the same way).
+//  *
+//  * Input: "Louis[n] went[v] to the store[n], and it was fun[a]."
+//  * Output: [
+//  *  { word: "Louis", pos: "noun" },
+//  *  { word: "went", pos: "verb", },
+//  *  { word: "to", },
+//  *  { word: "the", },
+//  *  { word: "store", pos: "noun" }
+//  *  { word: "," }
+//  *  ....
+//  *
+//  * There are multiple ways to do this, but you may want to use regular expressions.
+//  * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
+//  */
 
-// This is examplePull
-/**
- * All your other JavaScript code goes here, inside the function. Don't worry about
- * the `then` and `async` syntax for now.
- *
- * You'll want to use the results of parseStory() to display the story on the page.
- */
-
+  
 function parseStory(rawStory) {
   // Your code here.
   const spl = (string) => {
@@ -69,13 +101,15 @@ function parseStory(rawStory) {
 const inputId = [];
 function forInput(array) {
   const madLibsEdit = document.querySelector(".madLibsEdit");
+  madLibsEdit.id="edit"
   const madLibsPreview = document.querySelector(".madLibsPreview");
+  madLibsPreview.id="Preview"
 
   function createInputStory(place, pholder, index) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' id='${index}' placeholder=${pholder}> </span>`;
+    place.innerHTML += `<span> <input type='text' name='type' value='' class='input' id='${index}' placeholder=${pholder}> </span>`;
   }
-  function createOutputStory(place, pholder) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' placeholder=${pholder} readonly> </span>`;
+  function createOutputStory(place) {
+    place.innerHTML += `<span> <input type='text' name='type'class='output' value=''  readonly> </span>`;
   }
   array.forEach((object, index) => {
     if (object.pos) {
@@ -134,3 +168,12 @@ getRawStory().then(parseStory);
   setupSound();
   console.log("any thing");
 }
+
+  function toggleBtn() {
+    const light = document.getElementById("light");
+    const element = document.getElementById("btn");
+    element.classList.toggle("active");
+    light.classList.toggle("on");
+  }     
+      
+
