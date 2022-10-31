@@ -2,134 +2,135 @@
  * Your CSS goes here.
  */
 /*@media only screen and (min-width: 768px) {*/
-  * {
-    margin: 0;
-    padding: 0%;
-  }
-  html {
-    height: 100%;
-  }
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: column;
+}
 
-  body {
-    font-family: Helvetica, sans-serif;
-    position: relative;
-    background-color: #000000;
-    background-image: linear-gradient(315deg, #2c3e50 0%, #7f8c8d 74%);
-    display: flex;
-    align-items: center;
-  }
+* {
+  margin: 0;
+  padding: 0%;
+}
+html {
+  height: 100%;
+}
 
-  .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    flex-direction: row;
-  }
-  #edit {
-    
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 50 px 0;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    max-width: 40vw;
-    min-height: 30vh;
-    max-height: 60vh;
-    margin: 0;
-    right: 30px;
-    top: 800%;
-    justify-content: space-between;
-    
-  }
-  .madLibsEditP {
-    padding: 10px;
-  }
-  .madLibsPreviewP {
-    padding: 10px;
-  }
+body {
+  font-family: Helvetica, sans-serif;
+  background-image: linear-gradient(315deg, #2c3e50 0%, #7f8c8d 74%);
+}
 
-  #Preview {
-    
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 50 px 0;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    max-width: 40vw;
-    min-height: 30vh;
-    max-height: 70vh;
-    margin: 0;
-    right: 30px;
-    left: 30px;
-    top: 800%;
-    display: none;
-  }
+.container {
+  padding-top: 300px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+#edit {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 50 px 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 40vw;
+  min-height: 30vh;
+  max-height: 60vh;
 
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 20px 8%;
-  }
+  right: 30px;
+  left: 30px;
+}
+.madLibsEditP {
+  padding: 10px;
+}
+.madLibsPreviewP {
+  padding: 10px;
+}
 
-  nav a {
-    position: absolute;
-    text-decoration: none;
-    color: white;
-    margin: 0 30px;
-  }
+#Preview {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 50 px 0;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  max-width: 40vw;
+  min-height: 30vh;
+  max-height: 70vh;
 
-  nav button {
-    position: absolute;
-    background: #efefef;
-    height: 30px;
-    width: 60px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    transition: 0.5s;
-    left: 100px;
-  }
-  nav button span {
-    display: flex;
-    background: rgb(96, 96, 96);
-    height: 26px;
-    width: 26px;
-    border-radius: 50%;
-    margin-left: 0.25px;
-  }
-  .lamp-container {
-    position: absolute;
-    top: -200px;
-    left: 17%;
-    width: 200px;
-  }
-  .lamp {
-    width: 100%;
-  }
-  .light {
-    position: absolute;
-    top: 97%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    margin-left: -10px;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
+  right: 30px;
+  left: 30px;
 
-  .active {
-    background: green;
-  }
-  .active span {
-    background: white;
-    margin-left: 31px;
-  }
-  .on {
-    opacity: 1;
-  }
+  display: none;
+}
+
+nav {
+  align-items: center;
+  padding: 20px 8%;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 0 30px;
+}
+
+nav button {
+  display: absolute;
+  background: #efefef;
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.5s;
+  left: 100px;
+}
+nav button span {
+  display: flex;
+  background: rgb(96, 96, 96);
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  margin-left: 0.25px;
+}
+.lamp-container {
+  position: absolute;
+  top: -200px;
+  left: 70%;
+  width: 200px;
+}
+.lamp {
+  width: 100%;
+}
+.light {
+  position: absolute;
+  z-index: -1;
+  top: 97%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  margin-left: -10px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.active {
+  background: green;
+}
+.active span {
+  background: white;
+  margin-left: 31px;
+}
+.on {
+  opacity: 1;
+}
 /* } */
 
 .input[type="text"]:focus {
-  background-color: rgb(197, 205, 207);
+  background-color: rgb(199, 221, 226);
   outline: none !important;
 }
 .input {
@@ -149,53 +150,39 @@
   color: rgb(74, 57, 158);
   font-weight: bold;
 }
-.create {
-  position: fixed;
-  padding: 50 px 0;
-  margin: 0;
-  right: 110px;
-  top: 500px;
-}
 
-@media screen and (max-width: 550px)  {
-   
-    body {
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+}
+@media screen and (max-width: 550px) {
+  body {
+    font-size: 80%;
+    width: auto;
+    height: auto;
+  }
+
+  .hero {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-     font-size:80%; 
-     width:auto;
-     height: auto;
-     
-
-    }
-    .hero {
-        display: flex;
-        flex-wrap: wrap;
-        width:70%;
-        align-items: center;
-    }
-
-    .madLibsEditP{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:none;
-        min-width: 10%;
-        min-height: 10%;
-
-    }
-    .madLibsPreviewP{
-        display: flex;
-        flex-wrap: wrap;
-        min-width: 10%;
-        min-height: 10%;
-
-    }
-    .container{
-        
-        flex-direction: column;
-      }
-
-
-    
+    align-items: center;
   }
+
+  .madLibsEditP {
+    justify-content: none;
+    min-width: 10%;
+    min-height: 10%;
+  }
+  .madLibsPreviewP {
+    margin-top: 50px;
+    min-width: 10%;
+    min-height: 10%;
+  }
+  .container {
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
