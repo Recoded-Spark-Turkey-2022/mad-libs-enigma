@@ -35,7 +35,7 @@ function forInput(array) {
   madLibsPreview.id = "Preview";
 
   function createInputStory(place, pholder, index) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' class='input' id='${index}' placeholder=${pholder}> </span>`;
+    place.innerHTML += `<span> <input type='text' name='type' value='' class='input' id='${index}' placeholder=${pholder} maxlength='20' > </span>`;
   }
   function createOutputStory(place) {
     place.innerHTML += `<span> <input type='text' name='type'class='output' value=''  readonly> </span>`;
