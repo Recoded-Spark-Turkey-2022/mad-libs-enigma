@@ -1,42 +1,3 @@
-/**
- * Complete the implementation of parseStory.
- *
- * parseStory retrieves the story as a single string from story.txt
- * (I have written this part for you).
- *
- * In your code, you are required (please read this carefully):
- * - to return a list of objects
- * - each object should definitely have a field, `word`
- * - each object should maybe have a field, `pos` (part of speech)
- *
- * So for example, the return value of this for the example story.txt
- * will be an object that looks like so (note the comma! periods should
- * be handled in the same way).
- *
- * Input: "Louis[n] went[v] to the store[n], and it was fun[a]."
- * Output: [
- *  { word: "Louis", pos: "noun" },
- *  { word: "went", pos: "verb", },
- *  { word: "to", },
- *  { word: "the", },
- *  { word: "store", pos: "noun" }
- *  { word: "," }
- *  ....
- *
- * There are multiple ways to do this, but you may want to use regular expressions.
- * Please go through this lesson: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/regular-expressions/
- */
-
-// Your code here.
-
-// This is examplePull
-/**
- * All your other JavaScript code goes here, inside the function. Don't worry about
- * the `then` and `async` syntax for now.
- *
- * You'll want to use the results of parseStory() to display the story on the page.
- */
-
 function parseStory(rawStory) {
   // Your code here.
   const spl = (string) => {
@@ -61,21 +22,23 @@ function parseStory(rawStory) {
     return arrayOfObjects;
   });
   const x = JSON.stringify(arrayOfObjects);
-  console.log(arrayOfObjects);
+  //console.log(arrayOfObjects);
   forInput(arrayOfObjects);
   return x;
 }
 
 const inputId = [];
 function forInput(array) {
-  const madLibsEdit = document.querySelector(".madLibsEdit");
-  const madLibsPreview = document.querySelector(".madLibsPreview");
+  const madLibsEdit = document.querySelector(".madLibsEditP");
+  madLibsEdit.id = "edit";
+  const madLibsPreview = document.querySelector(".madLibsPreviewP");
+  madLibsPreview.id = "Preview";
 
   function createInputStory(place, pholder, index) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' id='${index}' placeholder=${pholder}> </span>`;
+    place.innerHTML += `<span> <input type='text' name='type' value='' class='input' id='${index}' placeholder=${pholder}> </span>`;
   }
-  function createOutputStory(place, pholder) {
-    place.innerHTML += `<span> <input type='text' name='type' value='' placeholder=${pholder} readonly> </span>`;
+  function createOutputStory(place) {
+    place.innerHTML += `<span> <input type='text' name='type'class='output' value=''  readonly> </span>`;
   }
   array.forEach((object, index) => {
     if (object.pos) {
@@ -89,15 +52,12 @@ function forInput(array) {
 
     document.querySelectorAll(`.madLibsEdit input`).forEach((input, index) => {
       input.addEventListener("input", (e) => {
-        console.log(index);
-        console.log(input);
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
       });
 
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
-          console.log(index);
           document.getElementById(`${inputId[index + 1]}`).focus();
         }
       });
@@ -129,11 +89,25 @@ function Create() {
   document.body.appendChild(m);
 }
 
+getRawStory().then(parseStory);
+{
+  setupSound();
+}
 
-getRawStory()
-  .then(parseStory)
-  {
-    //document.getElementById("demo").innerHTML = processedStory; // id demo was not on the html i put it there "omer"
-    setupSound()
-    console.log("anything");
+function toggleBtn() {
+  const light = document.getElementById("light");
+  const element = document.getElementById("btn");
+
+  element.classList.toggle("active");
+  light.classList.toggle("on");
+  myFunction();
+}
+
+function myFunction() {
+  let x = document.getElementById("Preview");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
   }
+}
