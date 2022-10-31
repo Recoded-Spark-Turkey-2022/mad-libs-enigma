@@ -39,7 +39,10 @@ function forInput(array) {
   }
   function createOutputStory(place) {
     place.innerHTML += `<span> <input type='text' name='type'class='output' value=''  readonly> </span>`;
+     
   }
+  
+ 
   array.forEach((object, index) => {
     if (object.pos) {
       inputId.push(index);
@@ -55,6 +58,9 @@ function forInput(array) {
         document.querySelectorAll(".madLibsPreview input")[index].value =
           e.target.value;
       });
+
+   
+      
 
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
@@ -75,19 +81,6 @@ function setupSound() {
   obj.setAttribute("id", "bgsound1");
   var body = document.getElementsByTagName("body")[0];
   body.appendChild(obj);
-}
-function Create() {
-  // Create audio element.
-  var m = document.createElement("AUDIO");
-
-  if (m.canPlayType("audio/mpeg")) {
-    m.setAttribute("src", "sound/free!.mp3");
-  } else {
-    m.setAttribute("src", "bells.ogg");
-  }
-
-  m.setAttribute("controls", "controls");
-  document.body.appendChild(m);
 }
 
 getRawStory().then(parseStory);
