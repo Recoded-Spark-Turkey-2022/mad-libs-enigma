@@ -63,6 +63,7 @@ function forInput(array) {
       });
     });
   });
+  
 }
 
 function setupSound() {
