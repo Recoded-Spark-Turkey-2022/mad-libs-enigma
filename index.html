@@ -9,19 +9,24 @@
 </head>
 
 <body>
-  <div class="all">
 
+  <div class="all">
+    <h1 class="title">Team Enigma</h1>
     <nav>
       <a href=" ">Light On</a>
       <button type="button" onclick="toggleBtn()" id="btn">
         <span></span>
+
       </button>
+      <audio id="audio" style="display:none;" src="./sounds/free!.mp3" controls autoplay loop></audio>
+
     </nav>
+
     <div class="container">
       <div class="madLibsEdit">
         <p class="madLibsEditP">
-
         </p>
+
       </div>
 
       <div class="madLibsPreview">
@@ -34,7 +39,9 @@
       <div class="lamp-container">
         <img src="lamp.png" class="lamp" />
         <img src="light.png" class="light" id="light" />
+
       </div>
+
     </div>
 
     <script src="do-not-touch.js"></script>

@@ -39,10 +39,8 @@ function forInput(array) {
   }
   function createOutputStory(place) {
     place.innerHTML += `<span> <input type='text' name='type'class='output' value=''  readonly> </span>`;
-     
   }
-  
- 
+
   array.forEach((object, index) => {
     if (object.pos) {
       inputId.push(index);
@@ -59,9 +57,6 @@ function forInput(array) {
           e.target.value;
       });
 
-   
-      
-
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
           document.getElementById(`${inputId[index + 1]}`).focus();
@@ -69,24 +64,15 @@ function forInput(array) {
       });
     });
   });
-  
 }
 
-function setupSound() {
-  var obj = document.createElement("object");
-  obj.width = "0px";
-  obj.height = "0px";
-  obj.type = "audio/mp3";
-  obj.data = "./sounds/free!.mp3";
-  obj.setAttribute("id", "bgsound1");
-  var body = document.getElementsByTagName("body")[0];
-  body.appendChild(obj);
-}
+let on_off = document.getElementById("btn");
+let audio = document.getElementById("audio");
+on_off.addEventListener("click", () => {
+  audio.paused ? audio.play() : audio.pause();
+});
 
 getRawStory().then(parseStory);
-{
-  setupSound();
-}
 
 function toggleBtn() {
   const light = document.getElementById("light");
@@ -94,14 +80,14 @@ function toggleBtn() {
 
   element.classList.toggle("active");
   light.classList.toggle("on");
-  myFunction();
+  togglePreview();
 }
 
-function myFunction() {
-  let x = document.getElementById("Preview");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+function togglePreview() {
+  let toggle = document.getElementById("Preview");
+  if (toggle.style.display === "block") {
+    toggle.style.display = "none";
   } else {
-    x.style.display = "block";
+    toggle.style.display = "block";
   }
 }
