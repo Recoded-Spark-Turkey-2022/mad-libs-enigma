@@ -168,6 +168,8 @@ nav button span {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    min-width: 100%;
+    min-height: 100vh;
   }
 
   .madLibsEditP {
@@ -184,5 +186,12 @@ nav button span {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 100%;
+    min-height: 100vh;
+  }
+  #Preview,
+  #edit {
+    min-width: 100%;
+    min-height: 100vh;
   }
 }
